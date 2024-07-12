@@ -10,8 +10,8 @@ const connect = async () => {
   try {
     mongoose.set("strictQuery", true);
     await mongoose.connect(
-      `mongodb+srv://${dbUser}:${dbPassword}@cluster0.5xtfehw.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`,
-      {dbName: 'MATC84-LABORATORIO-DE-PROGRAMACAO-WEB'}
+      `mongodb+srv://${dbUser}:${dbPassword}@matb19-database.blqykb7.mongodb.net/?retryWrites=true&w=majority&appName=matb19-database`,
+      {dbName: 'matb19-database'}
     );
     console.log("Banco conectado com sucesso!");
   } catch (error) {
