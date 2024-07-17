@@ -13,7 +13,7 @@ const upload = multer({ storage: storage })
 app.use(cors());
 
 const route = express.Router();
-route.get('/all', validToken, touristAttractionController.getAttractions);
+route.get('/all', touristAttractionController.getAttractions);
 route.get('/image/:id', touristAttractionController.getImage);
 route.patch('/:id', validToken, validId, upload.single('image'),  touristAttractionController.updateAttraction);
 route.delete('/:id', validToken, validId, touristAttractionController.deleteAttraction);
