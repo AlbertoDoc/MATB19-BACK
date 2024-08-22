@@ -6,6 +6,7 @@ import rootRoute from "./src/routes/root.route.js";
 import authRoute from "./src/routes/auth.route.js";
 import reviewRoute from "./src/routes/review.route.js";
 import touristAttractionRoute from "./src/routes/touristAttraction.route.js";
+import articleRoute from "./src/routes/article.route.js";
 import cors from 'cors';
 import swaggerRoute from "./src/routes/swagger/swagger.route.js";
 
@@ -38,6 +39,7 @@ app.use("/user", userRoute);
 app.use("/auth", authRoute);
 app.use("/reviews", reviewRoute);
 app.use("/touristAttraction", touristAttractionRoute);
+app.use("/article", articleRoute);
 app.use("/", rootRoute);
 app.use("/docs", swaggerRoute);
 
