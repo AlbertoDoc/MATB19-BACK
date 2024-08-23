@@ -55,21 +55,14 @@ const addArticle = async (req, res) => {
       return res.status(400).json({ error: "Please upload an image or add a video link in the body" });
     }
 
-    const { title, text, video } = req.body;
-    
-    let article = await articleService.createService({
-      title,
-      text
-    });
+    let article = req.body;
 
     if (req.file) {
       const base64Data = req.file.buffer.toString('base64');
       article = {...article, image: base64Data}
     }
-    
-    if (video) {
-      article = {...article, video: video}
-    }
+ 
+    article = await articleService.createService(article);
 
     res.status(201).json({
       message: "Article registered successfully",
